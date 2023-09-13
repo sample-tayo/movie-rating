@@ -26,7 +26,7 @@ const Hero = () => {
 
   // Check if movies array is empty or undefined
   if (!movies || movies.length === 0) {
-    return <div>Loading...</div>; // You can replace this with a loading indicator
+    return <div>Loading...</div>;
   }
 
   const headerStyle = {

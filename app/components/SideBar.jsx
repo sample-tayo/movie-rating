@@ -7,9 +7,9 @@ const SideBar = () => {
   const Menus = [
     { title: "Home", src: "Home", gap: true, href: "/" },
     { title: "Movies", src: "movies", gap: true, href: "/movies" },
-    { title: "TV Series", src: "desktop", gap: true, href: "/tv-series" }, // Add href for TV Series
-    { title: "Upcoming", src: "office", gap: true, href: "/upcoming" }, // Add href for Upcoming
-    { title: "Logout", src: "Logout", gap: true, href: "/logout" }, // Add href for Logout
+    { title: "TV Series", src: "desktop", gap: true, href: "/tv-series" },
+    { title: "Upcoming", src: "office", gap: true, href: "/upcoming" },
+    { title: "Logout", src: "Logout", gap: true, href: "/logout" },
   ];
 
   // Get the current pathname from the window location

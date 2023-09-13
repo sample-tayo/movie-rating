@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import SideBar from "@/app/components/SideBar";
 import { useMovieContext } from "../../context/MovieContext";
+import { api_read_access_token } from "@/app/data/apiKey";
 
 function MovieDetails({ params }) {
   const { formatReleaseDate } = useMovieContext();
@@ -22,8 +23,7 @@ function MovieDetails({ params }) {
               method: "GET",
               headers: {
                 accept: "application/json",
-                Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZWI0OGYyZDk4YmRjZmFjMzVjNWQ4MzFkNTIwYmM3ZSIsInN1YiI6IjY0ZmY1MDNkZmZjOWRlMGVlMDBjZGJmNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C-vFLkoBejPVHvGkMvZWDZZpxUi9yKte20YqCzXKV24",
+                Authorization: `Bearer ${api_read_access_token}`,
               },
             }
           );
@@ -48,8 +48,7 @@ function MovieDetails({ params }) {
               method: "GET",
               headers: {
                 accept: "application/json",
-                Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZWI0OGYyZDk4YmRjZmFjMzVjNWQ4MzFkNTIwYmM3ZSIsInN1YiI6IjY0ZmY1MDNkZmZjOWRlMGVlMDBjZGJmNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C-vFLkoBejPVHvGkMvZWDZZpxUi9yKte20YqCzXKV24",
+                Authorization: `Bearer ${api_read_access_token}`,
               },
             }
           );
@@ -141,7 +140,6 @@ function MovieDetails({ params }) {
                       {movieDetails.director}
                     </span>
                   </p>
-                  {/* Add other details as needed */}
                 </div>
 
                 <div className=' flex flex-col gap-4 md:w-1/4'>

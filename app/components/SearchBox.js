@@ -4,7 +4,7 @@ const SearchBoxComponent = () => {
   const { updateSearchQuery } = useMovieContext();
 
   const handleInputChange = (event) => {
-    // Call the function from the context to update the search query
+    // Calling the function from the context to update the search query
     updateSearchQuery(event.target.value);
   };
 
