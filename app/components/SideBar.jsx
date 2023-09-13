@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const SideBar = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const Menus = [
     { title: "Home", src: "Home", gap: true, href: "/" },
     { title: "Movies", src: "movies", gap: true, href: "/movies" },

@@ -36,22 +36,25 @@ const Hero = () => {
 
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "100vh",
+    // height: "100vh",
     backgroundRepeat: "no-repeat",
     position: "relative",
   };
 
   return (
-    <div style={headerStyle}>
+    <div style={headerStyle} className='h-3/4 md:h-screen'>
       <div className='absolute inset-0 bg-black opacity-50'></div>
-      <div className='absolute inset-x-0 top-0 flex items-center justify-between px-16 py-8'>
+      <div className='absolute inset-x-0 top-0 flex items-center px-8 justify-between md:px-16 py-8'>
         {/* Logo at the top left */}
         <div className='flex gap-4 items-center'>
           <Image height='50' width='50' src='/assets/tv.png' alt='Logo' />
           <p className='text-white font-extrabold text-2xl'>MovieBox</p>
         </div>
 
-        <SearchBox />
+        <div className='hidden md:block'>
+          <SearchBox />
+        </div>
+
         <div className='flex gap-4 items-center justify-center'>
           <div className='text-white'>Sign In</div>
 
@@ -65,7 +68,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className='flex gap-4 flex-col text-white   pt-48 w-2/6 pl-16'>
+      <div className='flex gap-4 flex-col text-white px-4 md:pb-0  pb-10  pt-48 md:w-2/6 md:pl-16'>
         <h3 className='text-5xl leading-5xl font-medium z-40'>
           {movies[movieIndex]?.title || "No Title"}
         </h3>

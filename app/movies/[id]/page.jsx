@@ -79,7 +79,7 @@ function MovieDetails({ params }) {
   return (
     <main className='flex'>
       <SideBar />
-      <div className='p-8 flex flex-col gap-4 h-screen overflow-y-auto'>
+      <div className='p-4 md:p-8 flex flex-col gap-4 h-screen overflow-y-auto'>
         {movieDetails ? (
           <>
             {videos.length > 0 &&
@@ -103,7 +103,7 @@ function MovieDetails({ params }) {
                 .filter(Boolean)[0]}
             <section>
               <div className='flex justify-between'>
-                <div className='font-bold flex items-center gap-2'>
+                <div className='font-bold flex flex-wrap  items-center gap-2'>
                   <p data-testid='movie-title'>{movieDetails.title}</p>
                   <p className='text-gray-500'>•</p>
                   <p>{getContentRating(movieDetails.adult)}</p>
@@ -131,8 +131,8 @@ function MovieDetails({ params }) {
                 </p>
               </div>
 
-              <div className='flex gap-4'>
-                <div className='flex flex-col gap-4 w-3/4'>
+              <div className='flex flex-col md:flex-row gap-4'>
+                <div className='flex flex-col gap-4 md:w-3/4'>
                   <p data-testid='movie-overview'>{movieDetails.overview}</p>
 
                   <p className='text-black'>
@@ -144,7 +144,7 @@ function MovieDetails({ params }) {
                   {/* Add other details as needed */}
                 </div>
 
-                <div className=' flex flex-col gap-4 w-1/4'>
+                <div className=' flex flex-col gap-4 md:w-1/4'>
                   <button className='bg-red-600 text-white w-full p-2 rounded-lg'>
                     See Sometimes
                   </button>
