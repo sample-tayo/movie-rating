@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { api_read_access_token } from "../data/apiKey";
 
