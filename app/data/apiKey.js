@@ -1,0 +1,4 @@
+export const api_key = "0eb48f2d98bdcfac35c5d831d520bc7e";
+
+export const api_read_access_token =
+  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZWI0OGYyZDk4YmRjZmFjMzVjNWQ4MzFkNTIwYmM3ZSIsInN1YiI6IjY0ZmY1MDNkZmZjOWRlMGVlMDBjZGJmNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C-vFLkoBejPVHvGkMvZWDZZpxUi9yKte20YqCzXKV24";
