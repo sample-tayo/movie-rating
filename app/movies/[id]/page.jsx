@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import SideBar from "@/app/components/SideBar";
 import { useMovieContext } from "../../context/MovieContext";
 import { api_read_access_token } from "@/app/data/apiKey";
+import PageSpinLoad from "@/app/components/PageSpinLoad";
 
 function MovieDetails({ params }) {
   const { formatReleaseDate } = useMovieContext();
@@ -112,7 +113,7 @@ function MovieDetails({ params }) {
                   </p>
                   <p className='text-gray-500'>•</p>
 
-                  <p className='flex gap-2 items-center'>
+                  <div className='flex gap-2 items-center'>
                     {movieDetails.genres.map((genre) => (
                       <p
                         key={genre.name}
@@ -120,7 +121,7 @@ function MovieDetails({ params }) {
                         {genre.name}
                       </p>
                     ))}
-                  </p>
+                  </div>
                   <p className='text-gray-500'>•</p>
                   <p data-testid='movie-runtime'>{movieDetails.runtime}</p>
                 </div>
@@ -155,7 +156,9 @@ function MovieDetails({ params }) {
           </>
         ) : (
           // Render a loading message or handle loading state here
-          <p>Loading...</p>
+          <div>
+            <PageSpinLoad />
+          </div>
         )}
       </div>
     </main>

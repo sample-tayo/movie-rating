@@ -9,7 +9,7 @@ const SearchBoxComponent = () => {
   };
 
   return (
-    <div className='w-3/5 bg-transparent border-2 p-2 rounded-md flex items-center'>
+    <div className='w-full bg-transparent border-2 p-2 rounded-md flex items-center'>
       <input
         type='text'
         placeholder='What do you want to watch?'

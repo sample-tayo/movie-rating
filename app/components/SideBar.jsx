@@ -7,8 +7,8 @@ const SideBar = () => {
   const Menus = [
     { title: "Home", src: "Home", gap: true, href: "/" },
     { title: "Movies", src: "movies", gap: true, href: "/movies" },
-    { title: "TV Series", src: "desktop", gap: true, href: "/tv-series" },
-    { title: "Upcoming", src: "office", gap: true, href: "/upcoming" },
+    { title: "TV Series", src: "Desktop", gap: true, href: "/tv-series" },
+    { title: "Upcoming", src: "Office", gap: true, href: "/upcoming" },
     { title: "Logout", src: "Logout", gap: true, href: "/logout" },
   ];
 
@@ -26,8 +26,9 @@ const SideBar = () => {
         height='28'
         alt='control'
         src='/assets/control.png'
-        className={`absolute cursor-pointer -right-3 top-9  border-dark-purple
-           border-2 rounded-full  ${!open && "rotate-180"}`}
+        className={`absolute cursor-pointer -right-3 top-9  border-dark-purple border-2 rounded-full  ${
+          !open && "rotate-180"
+        }`}
         onClick={() => setOpen(!open)}
       />
 
@@ -53,23 +54,28 @@ const SideBar = () => {
         {Menus.map((Menu, index) => (
           <li
             key={index}
-            className={`  rounded-md p-2 cursor-pointer text-gray-900 text-sm font-semibold
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
-              currentPath.startsWith(Menu.href)
-                ? "bg-red-200 text-red-700"
-                : "hover:bg-red-200 hover:text-red-700"
-            } `}>
+            className={`rounded-md p-2 text-gray-900 text-sm font-semibold ${
+              Menu.gap ? "mt-9" : "mt-2"
+            }`}>
             {/* Use Link to wrap the navigation item */}
-            <Link href={Menu.href} className='flex gap-x-4  items-center'>
-              <Image
-                height='24'
-                width='24'
-                alt={Menu.src}
-                src={`/assets/${Menu.src}.png`}
-              />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
-              </span>
+            <Link href={Menu.href} passHref>
+              <div
+                className={`flex gap-x-4 items-center ${
+                  currentPath.startsWith(Menu.href)
+                    ? "bg-red-200 text-red-700 cursor-pointer"
+                    : "hover:bg-red-200 hover:text-red-700 cursor-pointer"
+                }`}>
+                <Image
+                  height='24'
+                  width='24'
+                  alt={Menu.src}
+                  src={`/assets/${Menu.src}.png`}
+                />
+                <span
+                  className={`${!open && "hidden"} origin-left duration-200`}>
+                  {Menu.title}
+                </span>
+              </div>
             </Link>
           </li>
         ))}

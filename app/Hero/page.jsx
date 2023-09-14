@@ -4,6 +4,7 @@ import SearchBox from "@/app/components/SearchBox";
 import { useMovieContext } from "../context/MovieContext";
 import Link from "next/link";
 import Image from "next/image";
+import PageSpinLoad from "../components/PageSpinLoad";
 
 const Hero = () => {
   const { movies } = useMovieContext();
@@ -26,7 +27,11 @@ const Hero = () => {
 
   // Check if movies array is empty or undefined
   if (!movies || movies.length === 0) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <PageSpinLoad />
+      </div>
+    );
   }
 
   const headerStyle = {
@@ -51,7 +56,7 @@ const Hero = () => {
           <p className='text-white font-extrabold text-2xl'>MovieBox</p>
         </div>
 
-        <div className='hidden md:block'>
+        <div className='hidden md:w-3/5 md:block'>
           <SearchBox />
         </div>
 
