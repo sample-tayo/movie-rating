@@ -19,8 +19,8 @@ const SideBar = () => {
   return (
     <div
       className={`${
-        open ? "w-72" : "w-20 "
-      } bg-dark-purple h-screen p-5 border-r-2 rounded-r-xl  pt-8 relative duration-300`}>
+        open ? "w-72 " : "w-30"
+      } bg-dark-purple p-5  h-screen border-r-2 rounded-r-xl  pt-8 relative duration-300`}>
       <Image
         width='28'
         height='28'
@@ -54,10 +54,11 @@ const SideBar = () => {
         {Menus.map((Menu, index) => (
           <li
             key={index}
-            className={`rounded-md p-2 text-gray-900 text-sm font-semibold ${
+            className={`${
+              open ? " p-2" : " p-0"
+            } rounded-md  text-gray-900 text-sm font-semibold ${
               Menu.gap ? "mt-9" : "mt-2"
             }`}>
-            {/* Use Link to wrap the navigation item */}
             <Link href={Menu.href} passHref>
               <div
                 className={`flex gap-x-4 items-center ${
@@ -65,9 +66,8 @@ const SideBar = () => {
                     ? "bg-red-200 text-red-700 cursor-pointer"
                     : "hover:bg-red-200 hover:text-red-700 cursor-pointer"
                 }`}>
-                <Image
-                  height='24'
-                  width='24'
+                <img
+                  className=' md:w-6 md:h-6'
                   alt={Menu.src}
                   src={`/assets/${Menu.src}.png`}
                 />
